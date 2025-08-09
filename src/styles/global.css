@@ -1,1 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 @import "tailwindcss";
+@plugin '@tailwindcss/typography';
+
+
+@layer base {
+  body {
+    @apply font-['Inter',_sans-serif] text-base;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold uppercase;
+  }
+
+  h1 {
+    @apply text-3xl;
+  }
+  
+  h2 {
+    @apply text-2xl;
+  }
+
+  a {
+    @apply text-black hover:text-gray-700 transition-colors duration-300;
+  }
+
+  .main-nav {
+    @apply border border-black;
+  }
+
+  .main-nav a {
+    @apply block py-3 px-6 text-center uppercase tracking-widest font-bold;
+  }
+}

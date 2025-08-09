@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 300" fill="black">
+    <defs>
+        <style>
+            .letter-group {
+                /* For potential future styling */
+            }
+        </style>
+    </defs>
+
+    <!-- L -->
+    <g class="letter-group">
+        <path d="M50 50 h50 v180 h120 v50 h-220 z M100 150 h70 v20 h-70 z" />
+    </g>
+
+    <!-- O -->
+    <g class="letter-group">
+        <path d="M280 50 h170 v50 h-120 v80 h120 v50 h-170 v-50 h50 v-80 h-50 z M280 150 h170 v20 h-170 z" />
+    </g>
+
+    <!-- L -->
+    <g class="letter-group">
+        <path d="M510 50 h50 v180 h120 v50 h-220 z M560 150 h70 v20 h-70 z" />
+    </g>
+
+    <!-- C -->
+    <g class="letter-group">
+        <path d="M740 50 h170 v50 h-120 v130 h170 v50 h-220 v-230 z M740 150 h120 v20 h-120 z" />
+    </g>
+
+    <!-- O -->
+    <g class="letter-group">
+        <path d="M970 50 h170 v50 h-120 v80 h120 v50 h-170 v-50 h50 v-80 h-50 z M970 150 h170 v20 h-170 z" />
+    </g>
+    
+    <!-- W -->
+    <g class="letter-group">
+         <path d="M1150 50 l-30 230 h50 l30 -150 l30 150 h50 l-30 -230 h-40 l-20 120 l-20 -120 z M1150 150 h120 v20 h-120 z" />
+    </g>
+</svg>

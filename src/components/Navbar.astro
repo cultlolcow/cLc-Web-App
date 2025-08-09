@@ -1,0 +1,48 @@
+---
+// Navigation within the main content area
+---
+<nav class="nav">
+    <ul class="nav-list">
+        <li class="nav-list__item">
+            <a href="/about" class="nav-list__link _active">About</a>
+        </li>
+        <li class="nav-list__item">
+            <a href="/faq" class="nav-list__link">FAQ</a>
+        </li>
+    </ul>
+</nav>
+
+<style>
+    .nav {
+        background: #e8e2d1;
+    }
+    .nav-list {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        text-transform: uppercase;
+        font-size: 17px;
+        line-height: 20px;
+        font-weight: bold;
+        border: 1px solid currentColor;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .nav-list__item {
+        flex-grow: 1;
+        text-align: center;
+    }
+    .nav-list__item:first-child {
+        border-right: 1px solid currentColor;
+    }
+    .nav-list__link {
+        display: block;
+        padding: 1rem;
+        text-decoration: none;
+        color: inherit;
+    }
+    .nav-list__link._active {
+        font-style: italic;
+    }
+</style>

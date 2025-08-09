@@ -1,0 +1,236 @@
+---
+const sidebarLinks = [
+    { href: "/about", text: "About cLc", active: true },
+    { href: "#", text: "R&D" },
+    { href: "#", text: "Events / Meet-Ups" },
+    { href: "#", text: "Workshops & Talks" },
+    { href: "#", text: "E-Waste Program" },
+    { href: "#", text: "Sponsorship" },
+    { href: "/faq", text: "Oracle" },
+    { href: "#contacts", text: "Contacts" },
+];
+---
+<aside class="wrapper-prime__side">
+    <div class="sidebar-sticky-container">
+        <div class="sidebar">
+            <div class="sidebar__body">
+                <div class="sidebar__line sidebar__head">
+                    <strong class="logo"><a href="/">cLc</a></strong>
+                </div>
+                <div class="sidebar__line _navside">
+                    <nav class="navside">
+                        <ul class="navside-list">
+                            {sidebarLinks.map(link => (
+                                <li class="navside-list__item">
+                                    <a href={link.href} class:list={["navside-list__link", { _active: link.active }]}>{link.text}</a>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+                </div>
+                <div class="sidebar__line">
+                    <ul class="sidebar-socials">
+                        <li class="sidebar-socials__item">
+                            <a href="https://www.youtube.com/channel/UCq2i-7zg34-_vT9aGDWvG9w" class="sidebar-socials__button">
+                                <svg class="icon sidebar-socials__icon"><use xlink:href="#icon-youtube"></use></svg>
+                            </a>
+                        </li>
+                        <li class="sidebar-socials__item">
+                            <a href="https://discord.gg/7YyAm22SqV" class="sidebar-socials__button">
+                                 <svg class="icon sidebar-socials__icon"><use xlink:href="#icon-discord"></use></svg>
+                            </a>
+                        </li>
+                         <li class="sidebar-socials__item">
+                            <a href="mailto:hello@cultlolcow.com" class="sidebar-socials__button">
+                                <svg class="icon sidebar-socials__icon"><use xlink:href="#icon-email"></use></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sidebar__footer">
+                <div class="items-clean paragraph-sm">
+                    <div class="items _to-center _mega-sm">
+                        <div class="items__item">
+                            <svg class="icon _m"><use xlink:href="#icon-system"></use></svg>
+                        </div>
+                        <div class="items__item">
+                            <div class="text-uppercase">
+                                <a href="#">Under & Powered by Behelit Systems</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<style>
+    .wrapper-prime__side {
+        width: 204px;
+        margin-right: 70px;
+        flex-shrink: 0;
+    }
+    .sidebar-sticky-container {
+        position: sticky;
+        top: 30px;
+        width: 100%;
+        z-index: 300;
+        align-self: start;
+    }
+    .sidebar {
+       padding-bottom: 30px;
+    }
+    .sidebar__body {
+        border: 1px solid currentColor;
+    }
+    .sidebar__line {
+        border-top: 1px solid currentColor;
+    }
+    .sidebar__line:first-child {
+        border-top: none;
+    }
+    .sidebar__head {
+        text-align: center;
+        padding: 6px;
+    }
+    .logo a {
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 2rem;
+        text-decoration: none;
+    }
+    ._navside {
+        padding: 1rem;
+    }
+    .navside-list {
+        list-style: none;
+        text-transform: uppercase;
+        font-size: 15px;
+        line-height: 20px;
+        letter-spacing: -0.9px;
+    }
+    .navside-list__item {
+        margin-bottom: 0.75rem;
+    }
+    .navside-list__link {
+        text-decoration: none;
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 28px;
+        color: #000;
+        position: relative;
+        z-index: 1;
+    }
+    .navside-list__link._active {
+        font-style: italic;
+    }
+    .navside-list__link::after {
+        content: '';
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        position: absolute;
+        top: 3px;
+        left: 0;
+        border: 1px solid currentColor;
+        transition: all 250ms ease 0s;
+        will-change: background;
+    }
+    .navside-list__link._active::after {
+        background: currentColor;
+    }
+    .sidebar-socials {
+        margin: -1px 0 0 -1px;
+        display: flex;
+        flex-flow: row wrap;
+        font-size: 17px;
+        line-height: 20px;
+        font-weight: bold;
+        list-style: none;
+        padding: 0;
+    }
+    .sidebar-socials__item {
+        width: 33.333333%;
+        border-top: 1px solid currentColor;
+        border-left: 1px solid currentColor;
+    }
+    .sidebar-socials__button {
+        text-decoration: none;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        transition: background-color 250ms ease, color 250ms ease;
+        will-change: background-color, color;
+        padding: 10px;
+    }
+     .sidebar-socials__button:hover {
+        background-color: black;
+        color: #e8e2d1;
+    }
+    .icon {
+        transition: fill 250ms ease;
+        will-change: fill;
+        display: inline-block;
+        vertical-align: top;
+        fill: currentColor;
+    }
+    .sidebar-socials__icon {
+        width: 24px;
+        height: 24px;
+    }
+    .sidebar__footer {
+        text-align: center;
+        margin-top: 16px;
+    }
+    .items-clean {
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+    }
+    .paragraph-sm {
+        font-size: 12px;
+        line-height: 1.16667em;
+    }
+    .items {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+    }
+    .items._to-center {
+        justify-content: center;
+    }
+    .items._mega-sm {
+        margin: -4px;
+    }
+    .items__item {
+        max-width: 100%;
+    }
+    .items._mega-sm > .items__item {
+        padding: 4px;
+    }
+    .icon._m {
+        width: 20px;
+        height: 20px;
+    }
+    .text-uppercase {
+        text-transform: uppercase;
+    }
+     .text-uppercase a {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    @media (max-width: 992px) {
+        .wrapper-prime__side {
+            display: none;
+        }
+    }
+</style>

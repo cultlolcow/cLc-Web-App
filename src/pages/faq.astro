@@ -1,0 +1,91 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+
+const faqsPart1 = [
+  {
+    question: "What is the Cult of the LOLCOW?",
+    answer: "We are a global collective of hardware hackers, security researchers, and relentlessly curious minds. Our message is simple: to dissect systems (both mechanical and human-centric), not to harm individuals. Our vision is to cultivate a vibrant, collaborative, and inclusive digital nexus where the pursuit of knowledge in embedded systems, RF, physical security, and unconventional attack surfaces thrives. We believe in learning through breaking, building, and sharing."
+  },
+  {
+    question: "Are you a 'cheap copy' of Cult of the Dead Cow?",
+    answer: "Absolutely not. The Cult of the LOLCOW is an independent entity, born from a genuine resonance with the original Cult of the Dead Cow's ethos of open knowledge, curiosity, and challenging the status quo. The 'LOLCOW' in our name is a coincidence rooted in my personal history: as a kid, I deeply admired cDc's message, and years later, I coincidentally adopted 'LOLCOW' as a team name in CTF tournaments. This confluence of admiration and personal journey forged our identity, not imitation. We stand on our own, inspired by a legacy, but forging a unique path focused on hardware."
+  },
+  {
+    question: "What is the Cult's primary focus and mission?",
+    answer: "Our mission is to provide a sanctuary for applied hardware security research and learning. We emphasize hands-on experimentation, reverse engineering, and practical skill development across domains like IoT, automotive systems, industrial control, and physical security. We aim to foster a community where members can share insights, collaborate on projects, and collectively push the boundaries of understanding how the physical and digital worlds intersect, all while upholding ethical hacking principles."
+  },
+];
+
+const faqsPart2 = [
+    {
+        question: "Are you sharing resources for hardware hacking beginners?",
+        answer: "Yes, we absolutely are! We encourage the sharing of knowledge and resources within our channels. However, as a nascent and growing community, the volume of shared resources will naturally expand with our membership. We are still building our collective wisdom, and while we strive to provide a helpful environment, the depth and breadth of available resources will depend on the active contributions and shared insights of all our initiates. Your participation helps us grow this treasury of knowledge!"
+    },
+    {
+        question: "How can I get involved or contribute to the Cult?",
+        answer: "Your active participation is the lifeblood of our Cult! You can get involved by: asking and answering questions, sharing your projects and discoveries (big or small!), suggesting new ideas for discussions or challenges, mentoring newer members, and simply engaging in the conversations within your chosen domain channels. Every contribution strengthens our collective knowledge."
+    },
+    {
+        question: "Where can I find Cult of the LOLCOW's official socials?",
+        answer: "The LOLCOW's influence stretches far beyond this server. Connect with us on our various platforms to receive transmissions, witness new rituals, and engage with the Cult's broader presence. All our official links are gathered in one place: Access the Nexus Here. Follow us to stay updated on: New hardware research and breakthroughs, Community events and live streams, Insights from the deepest crypts of silicon, And more transmissions from the machine gods."
+    },
+];
+---
+
+<BaseLayout title="The Oracle | Cult of the LOLCOW">
+    <Navbar />
+    <div class="mt-8">
+        <h1 class="mb-4">The Oracle Speaks</h1>
+        <p class="text-lg italic text-gray-700 mb-8">Initiates often arrive with questions, seeking to understand the whispers they've heard. Here, the ambiguities are dispelled, and the true nature of our Cult is revealed.</p>
+
+        <div class="faq-accordion space-y-4">
+            <!-- Part 1 -->
+            {faqsPart1.map((faq) => (
+                <div class="faq-item border border-black">
+                    <button class="faq-question w-full text-left p-4 flex justify-between items-center hover:bg-gray-200">
+                        <span class="text-xl font-bold uppercase">{faq.question}</span>
+                        <span class="faq-icon text-2xl font-mono transform transition-transform">+</span>
+                    </button>
+                    <div class="faq-answer hidden p-4 border-t border-black">
+                        <p class="text-gray-800 text-lg">{faq.answer}</p>
+                    </div>
+                </div>
+            ))}
+            <!-- Part 2 -->
+             {faqsPart2.map((faq) => (
+                <div class="faq-item border border-black">
+                    <button class="faq-question w-full text-left p-4 flex justify-between items-center hover:bg-gray-200">
+                        <span class="text-xl font-bold uppercase">{faq.question}</span>
+                        <span class="faq-icon text-2xl font-mono transform transition-transform">+</span>
+                    </button>
+                    <div class="faq-answer hidden p-4 border-t border-black">
+                        <p class="text-gray-800 text-lg">{faq.answer}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const accordions = document.querySelectorAll('.faq-accordion');
+    
+    accordions.forEach(accordion => {
+      const items = accordion.getElementsByClassName('faq-item');
+      
+      for (let i = 0; i < items.length; i++) {
+        const question = items[i].querySelector('.faq-question');
+
+        question.addEventListener('click', () => {
+          const answer = items[i].querySelector('.faq-answer');
+          const icon = items[i].querySelector('.faq-icon');
+          
+          answer.classList.toggle('hidden');
+          icon.classList.toggle('rotate-45');
+        });
+      }
+    });
+  });
+</script>
