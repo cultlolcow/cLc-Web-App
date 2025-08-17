@@ -1,0 +1,20 @@
+---
+const domains = [
+    "Embedded & Firmware Security",
+    "Wireless & RF Security",
+    "IoT & E-waste Hacking",
+    "Physical Security",
+    "Specialized Systems (Medical, ICS, Automotive)",
+    "Human Factor Security (Social Engineering)"
+];
+---
+<section class="mt-12 section-divider" id="domains">
+    <h2 class="text-5xl font-bold uppercase text-center mb-8">Core Domains</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {domains.map(domain => (
+            <div class="border border-black p-6 text-center">
+                <h3 class="font-bold text-xl uppercase">{domain}</h3>
+            </div>
+        ))}
+    </div>
+</section>

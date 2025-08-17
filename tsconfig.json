@@ -16,7 +16,7 @@
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
       "@styles/*": ["src/styles/*"],
-      "@pages/*": ["src/pages/*"]
+      "@sections/*": ["src/components/sections/*"]
     }
   }
 }

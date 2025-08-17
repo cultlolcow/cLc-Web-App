@@ -1,0 +1,43 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import Marquee from '@/components/Marquee.astro';
+import Sidebar from '@/components/Sidebar.astro';
+import MobileMenu from '@/components/MobileMenu.tsx';
+import PatternLines from '@/components/PatternLines.astro';
+import '@/styles/global.css';
+
+interface Props {
+	title?: string;
+}
+
+const { title = "Cult of the LOLCOW" } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+</head>
+<body>
+    <Marquee />
+    <div class="max-w-[1360px] mx-auto px-4 md:px-8">
+        <MobileMenu client:load />
+        <div class="my-10">
+            <img src="/logo_full.svg" alt="Cult of the LOLCOW Logo" class="w-full h-auto" />
+        </div>
+        <div class="my-10">
+            <PatternLines />
+        </div>
+        <div class="md:flex md:gap-16">
+            <Sidebar />
+            <main class="w-full">
+                <slot />
+            </main>
+        </div>
+    </div>
+</body>
+</html>

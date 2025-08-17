@@ -1,89 +1,18 @@
 ---
-import BaseLayout from '@layouts/BaseLayout.astro';
-import Sidebar from '@components/Sidebar.astro';
-import Hero from '@components/Hero.astro';
-import Navbar from '@components/Navbar.astro';
+import Layout from '@/layouts/Layout.astro';
+import TopNav from '@/components/TopNav.astro';
+import AboutSection from '@/components/sections/AboutSection.astro'
+import MissionSection from '@/components/sections/MissionSection.astro';
+import DomainsSection from '@/components/sections/DomainSection.astro';
+import ProgramsSection from '@/components/sections/ProgramsSection.astro';
+import ContactsSection from '@/components/sections/ContactsSection.astro';
+
 ---
-
-<BaseLayout>
-    <Hero />
-    <div class="wrapper-prime">
-        <Sidebar />
-        <main class="wrapper-prime__content">
-            <div class="section-indent nav-section">
-                <Navbar />
-            </div>
-             <div class="section-indent" id="project">
-                <div class="cols">
-                    <div class="col-50">
-                        <div class="line-l">
-                            <h1 class="title-m text-center">Cult of the LOLCOW</h1>
-                        </div>
-                        <div class="line-l">
-                            <div class="text-container">
-                                <p>
-                                    We are a global collective of hardware hackers, security researchers, and relentlessly curious minds. Our message is simple: to dissect systems (both mechanical and human-centric), not to harm individuals.
-                                </p>
-                                <p>
-                                    Our vision is to cultivate a vibrant, collaborative, and inclusive digital nexus where the pursuit of knowledge in embedded systems, RF, physical security, and unconventional attack surfaces thrives. We believe in learning through breaking, building, and sharing.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-50">
-                        <div class="w-full h-96 bg-gray-300 border-2 border-black flex items-center justify-center">
-                            <p class="text-gray-500">[Image Placeholder]</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
-</BaseLayout>
-
-<style>
-.wrapper-prime {
-    display: flex;
-    max-width: 1360px;
-    margin: 0 auto;
-    padding: 40px 30px;
-}
-.wrapper-prime__content {
-    flex-grow: 1;
-    width: 1%;
-}
-.section-indent {
-    margin-top: 50px;
-}
-.cols {
-    display: flex;
-    gap: 40px;
-}
-.col-50 {
-    width: 50%;
-}
-.line-l {
-    margin-bottom: 2rem;
-}
-.title-m {
-    font-size: 2rem;
-}
-.text-container p {
-    margin-bottom: 1rem;
-    font-size: 1.125rem;
-    line-height: 1.75;
-}
-
-@media (max-width: 992px) {
-    .wrapper-prime {
-        flex-direction: column;
-    }
-    .cols {
-        flex-direction: column;
-    }
-    .col-50 {
-        width: 100%;
-    }
-}
-</style>
-
+<Layout title="Cult of the LOLCOW">
+  <TopNav />
+  <AboutSection />
+  <MissionSection />
+  <DomainsSection />
+  <ProgramsSection />
+  <ContactsSection />
+</Layout>
