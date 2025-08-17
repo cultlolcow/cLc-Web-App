@@ -40,40 +40,41 @@ const { title = "Cult of the LOLCOW" } = Astro.props;
         </div>
     </div>
 
-    {/* SCRIPT FOR ACTIVE LINK ON SCROLL */}
+    {/* SCRIPT FOR ACTIVE LINK ON SCROLL - CORRECTED */}
     <script>
         document.addEventListener('astro:page-load', () => {
-            const sections = document.querySelectorAll('section[id]');
+            const sections = document.querySelectorAll('main section[id]');
             const navLinks = document.querySelectorAll('.navside-list__link');
 
-            if (sections.length === 0 || navLinks.length === 0) return;
+            if (!sections.length || !navLinks.length) return;
 
-            const observerOptions = {
-                root: null,
-                // Triggers when the section is in the middle 50% of the viewport
-                rootMargin: '-25% 0px -75% 0px',
-                threshold: 0
-            };
+            const observer = new IntersectionObserver(entries => {
+                let lastVisibleSectionId = null;
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    const id = entry.target.getAttribute('id');
-                    const correspondingLink = document.querySelector(`.navside-list__link[href="#${id}"]`);
-
-                    if (entry.isIntersecting) {
-                        // Remove active class from all links
-                        navLinks.forEach(link => link.classList.remove('_active'));
-                        // Add active class to the intersecting one
-                        if (correspondingLink) {
-                            correspondingLink.classList.add('_active');
-                        }
+                // Find the last section that is intersecting from the top.
+                for (let i = entries.length - 1; i >= 0; i--) {
+                    if (entries[i].isIntersecting) {
+                        lastVisibleSectionId = entries[i].target.id;
+                        break;
+                    }
+                }
+                
+                navLinks.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href === `#${lastVisibleSectionId}`) {
+                        link.classList.add('_active');
+                    } else {
+                        link.classList.remove('_active');
                     }
                 });
-            }, observerOptions);
 
-            sections.forEach(section => {
-                observer.observe(section);
+            }, {
+                root: null,
+                rootMargin: '-40% 0px -60% 0px',
+                threshold: 0
             });
+
+            sections.forEach(section => observer.observe(section));
         });
     </script>
 </body>

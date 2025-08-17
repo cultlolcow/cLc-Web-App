@@ -12,8 +12,14 @@ const marqueeText = "A HOME FOR THE UNBOUND - POWERED BY BEHELIT SYSTEMS - ETHIC
     </div>
 </div>
 
+<style is:global>
+@keyframes marquee-animation {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-50%); }
+}
+</style>
+
 <style>
-/* This CSS is adapted directly from your working style.css to ensure the animation works correctly */
 .spotrun {
   background: #000;
   color: #e8e2d1;
@@ -30,15 +36,10 @@ const marqueeText = "A HOME FOR THE UNBOUND - POWERED BY BEHELIT SYSTEMS - ETHIC
 }
 .spotrun__content {
   display: flex;
-  /* This is the keyframe animation from your style.css */
   animation: marquee-animation 40s linear infinite;
 }
 .spotrun__content:hover {
   animation-play-state: paused;
-}
-@keyframes marquee-animation {
-  from { transform: translateX(0%); }
-  to { transform: translateX(-50%); }
 }
 .spotrun__item {
   margin-left: 46px;

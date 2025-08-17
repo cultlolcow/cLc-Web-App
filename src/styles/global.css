@@ -2,8 +2,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-background: #e8e2d1;
-  --color-brand-text: #000;
+  /* New color scheme based on the provided image */
+  --color-brand-background: #F2E9D8; /* Off-white cream */
+  --color-brand-text: #1A1A1A;      /* Deep black */
+  --color-brand-accent: #D91E2A;     /* Bold red */
   
   --font-family-sans: "Arial Narrow", Arial, sans-serif;
 
@@ -15,7 +17,9 @@
     @apply scroll-smooth;
   }
   body {
-    @apply bg-brand-background text-brand-text font-sans;
+    background-color: var(--color-brand-background);
+    color: var(--color-brand-text);
+    @apply font-sans;
   }
 }
 
