@@ -1,11 +1,47 @@
 ---
-const marqueeText = "SCI-FI RESET PROJECT BY ‘SISTEMA’ CHARITABLE FOUNDATION";
+const marqueeText = "A HOME FOR THE UNBOUND - POWERED BY BEHELIT SYSTEMS - ETHICAL HACKING SANCTUARY";
 ---
-<div class="bg-black text-brand-background p-2.5 overflow-hidden text-2xl uppercase whitespace-nowrap">
-    <div class="animate-marquee flex">
-        <span class="mx-6 flex-shrink-0">{marqueeText}</span>
-        <span class="mx-6 flex-shrink-0">{marqueeText}</span>
-        <span class="mx-6 flex-shrink-0">{marqueeText}</span>
-        <span class="mx-6 flex-shrink-0">{marqueeText}</span>
+<div class="spotrun">
+    <div class="spotrun__frame">
+        <div class="spotrun__content">
+            <div class="spotrun__item">{marqueeText}</div>
+            <div class="spotrun__item">{marqueeText}</div>
+            <div class="spotrun__item">{marqueeText}</div>
+            <div class="spotrun__item">{marqueeText}</div>
+        </div>
     </div>
 </div>
+
+<style>
+/* This CSS is adapted directly from your working style.css to ensure the animation works correctly */
+.spotrun {
+  background: #000;
+  color: #e8e2d1;
+  padding: 9px 0;
+  overflow: hidden;
+  font-size: 30px;
+  line-height: 32px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.spotrun__frame {
+  overflow: hidden;
+  display: flex;
+}
+.spotrun__content {
+  display: flex;
+  /* This is the keyframe animation from your style.css */
+  animation: marquee-animation 40s linear infinite;
+}
+.spotrun__content:hover {
+  animation-play-state: paused;
+}
+@keyframes marquee-animation {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-50%); }
+}
+.spotrun__item {
+  margin-left: 46px;
+  flex-shrink: 0;
+}
+</style>

@@ -6,9 +6,6 @@
   --color-brand-text: #000;
   
   --font-family-sans: "Arial Narrow", Arial, sans-serif;
-  --font-family-timer: "Ticking Timebomb BB italic", "Courier New", monospace;
-
-  --animation-marquee: marquee 60s linear infinite;
 
   --breakpoint-md: 992px;
 }
